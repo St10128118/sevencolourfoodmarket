@@ -2,38 +2,38 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Food and Beverages">
     <meta name="author" content="Comfort Malope">
     <meta name="keywords" content="HTML, CSS, JavaScript">
-	<title>Food and Bevereges</title>
-	<link rel="stylesheet" href="css/main.css">
+    <title>Food and Bevereges</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-	<header>
+    <header>
 
-	</header>
-	<main>
-		<nav class="navbar">
-			<ul class="nav-list">
-				<li><a href="index.html">Home Page</a></li>
-				<li><a href="about-us.html">About Us</a></li>
-				<li><a href="food-and-beverages.html">Food & Beverages</a></li>
-				<li><a href="contact-us.html">Contact Us</a></li>
-				<li><a href="past&upcomingevents.html">Past & Upcoming Events</a></li>
-			</ul>
-		</nav>
-	</main>
+    </header>
+    <main>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="index.html">Home Page</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="food-and-beverages.html">Food & Beverages</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="past&upcomingevents.html">Past & Upcoming Events</a></li>
+            </ul>
+        </nav>
+    </main>
 
 
 
-	<h1 style="text-align:center;"> Food and beverages</h1>
+    <h1 style="text-align:center;"> Food and beverages</h1>
 
-	<h2> we our different kinds of drinks and food </h2>
+    <h2> we our different kinds of drinks and food </h2>
 
-<!--
+    <!--
 	<div class="image-container">
 		<img src="images/p7.png" class="responsive-img">
 	</div>
@@ -71,10 +71,12 @@
 
 	</div>
 -->
-	<!-- Main Content -->
+    <!-- Main Content -->
     <div class="main-content">
-        <p><marquee>Click on any image to view it in the lightbox.</marquee></p>
-       
+        <p>
+            <marquee>Click on any image to view it in the lightbox.</marquee>
+        </p>
+
         <!-- Gallery Section -->
         <div class="gallery">
             <div class="gallery-item" onclick="openLightbox('images/p7.png', 'Jager Drinks')">
@@ -103,7 +105,7 @@
             </div>
         </div>
     </div>
-   
+
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
         <span class="close-btn" onclick="closeLightbox()">&times;</span>
@@ -111,22 +113,15 @@
         <div class="lightbox-content">
             <img id="lightbox-img" src="" alt="">
             <div class="lightbox-caption" id="lightbox-caption"></div>
-        </div> 
+        </div>
         <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
     </div>
 
-	<footer>
-		<p>&copy; ST10128118</p>
-	</footer>
-	
+    <footer>
+        <p>&copy; ST10128118</p>
+    </footer>
+
     <script>
-        // Mobile navigation toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-       
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
        
         // Lightbox functionality
         let currentImageIndex = 0;
@@ -145,9 +140,7 @@
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
             const lightboxCaption = document.getElementById('lightbox-caption');
-
             
-           
             // Find the index of the clicked image
             currentImageIndex = images.findIndex(img => img.src === src);
            
