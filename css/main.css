@@ -173,6 +173,35 @@ body {
 .next-btn {
     right: 2rem;
 }
+/* End of galary */
+
+/* Contact form field and buttons */
+#title, #name, #email, #textArea {
+    width: 20rem;
+    margin: 3px;
+    padding: 5px;
+}
+
+#title, #name, #email {
+    height: 2rem;
+}
+
+#submitBtn, #resetBtn {
+    width: 5rem;
+    height: 1.5rem;
+    border-radius: 5px;
+}
+
+#submitBtn {
+    background-color: orange;
+    color: #000;
+}
+
+#resetBtn {
+    background-color: #333333;
+    color: #fff;
+}
+
 
 /* Responsive styles */
 @media (max-width: 768px) {
