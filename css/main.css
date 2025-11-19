@@ -176,7 +176,7 @@ body {
 /* End of galary */
 
 /* Contact form field and buttons */
-#title, #name, #email, #textArea {
+#title, #name, #email, #message {
     width: 20rem;
     margin: 3px;
     padding: 5px;
@@ -187,9 +187,10 @@ body {
 }
 
 #submitBtn, #resetBtn {
-    width: 5rem;
-    height: 1.5rem;
+    width: 8rem;
+    height: 2rem;
     border-radius: 5px;
+    margin-bottom: 1rem;
 }
 
 #submitBtn {
