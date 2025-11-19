@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>contact us</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<!-- style="background-color:rgb(158, 144, 65);" -->
+
+<body>
+	<header>
+		<!-- header content -->
+	</header>
+	<main>
+		<nav class="navbar">
+			<ul class="nav-list">
+				<li><a href="index.html">Home Page</a></li>
+				<li><a href="about-us.html">About Us</a></li>
+				<li><a href="food-and-beverages.html">Food & Beverages</a></li>
+				<li><a href="contact-us.html">Contact Us</a></li>
+				<li><a href="past&upcomingevents.html">Past & Upcoming Events</a></li>
+			</ul>
+		</nav>
+	</main>
+
+
+	<div class="para">
+		<div class="glass-bg">
+			<h1>contact us</h1>
+			<h2>For any Queries, you can reach out to us by completing this form:</h2>
+		</div>
+	</div>
+
+	<form id="reachoutForm">
+		<div class="para">
+			<p class="glass-bg">
+				<input type="text" name="title" id="title" required minlength="2" placeholder="Reason for reaching out (Email Subject line)">
+				<br>
+				<input type="text" name="name" id="name" required minlength="5" placeholder="Please enter your Full name(s)">
+				<br>
+				<input type="text" name="email" id="email" required minlength="3" placeholder="Please enter your email">
+				<br>
+				<textarea name="textArea" id="textArea" cols="50" rows="15" placeholder="Message"></textarea>
+				<br>
+				<button class="submitBtn" type="submit">Send Message</button> <button class="resetBtn" type="reset">Clear fields</button>
+			</p>
+		</div>
+	</form>
+
+	<div class="para">
+		<p class="glass-bg">
+			Or you can contact the support on: <br>
+			0796864213 or 0717018868
+			<br><br>
+			<a href="mailto:innocentcomfort@gmail.com">innocentcomfort@gmail.com</a>
+			<br><br>
+			can also find us on social media : facebook & instagram handles kasi nice dishes
+		</p>
+	</div>	
+
+	<!-- <iframe
+		src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d229081.44783066775!2d27.87612765756153!3d-26.216266822901417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x1e950b9300000001%3A0x335d35f228da3ccd!2sBraamfontein%20Centre%2C%2023%20Jorissen%20St%2C%20Braamfontein%2C%20Johannesburg%2C%202017!3m2!1d-26.192821199999997!2d28.0339195!5e0!3m2!1sen!2sza!4v1763110857279!5m2!1sen!2sza%22 width="
+		600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+		referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+
+	<footer>
+		<p>&copy; ST10128118
+		</p>
+	</footer>
+
+	<!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("MOmkglFAuzMDMtncd"); // Replace with your EmailJS public key
+        })();
+
+        const form = document.getElementById('reachoutForm');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let valid = true;
+
+            // Validation
+            const title = document.getElementById('name');
+            const name = document.getElementById('name');
+            const message = document.getElementById('message');
+            const email = document.getElementById('email');
+            const time = new Date();
+
+            document.getElementById('titleError').textContent = title.value.length < 2 || title.value.length === "" ? "title must be at least 2 characters." : "";
+            document.getElementById('nameError').textContent = name.value.length < 5 ? "Name must be at least 5 characters." : "";
+            document.getElementById('emailError').textContent = email.validity.valid ? "" : "Enter a valid email.";
+            document.getElementById('messageError').textContent = message.value.length < 10 ? "Message must be descriptive as much as possible." : "";
+
+            if (title.value.length < 2 || name.value.length < 2 || !email.validity.valid || message.value.length < 10) {
+                valid = false;
+            }
+
+			alert("Clicked on the submit");
+
+            if (!valid) return;
+
+            // Send email via EmailJS
+            emailjs.send("service_ohvelbn", "template_zk2urfd", {
+                name: name.value,
+                email: email.value,
+            })
+                .then(function (response) {
+                    alert("Form submitted successfully! Email sent.");
+                    form.reset();
+                }, function (error) {
+                    alert("Failed to send email: " + JSON.stringify(error));
+                });
+        });
+    </script>
+</body>
+
+</html>
